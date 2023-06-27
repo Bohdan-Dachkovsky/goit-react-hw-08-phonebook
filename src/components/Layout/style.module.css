@@ -1,0 +1,13 @@
+.linkStyle {
+    display: 'flex';
+    margin: '1rem';
+    flex-direction: 'row';
+    text-decoration: 'none';
+    list-style: none;
+  };
+.textLights {
+    display: 'block';
+    width: '15px';
+    height: '15px';
+  };
+  

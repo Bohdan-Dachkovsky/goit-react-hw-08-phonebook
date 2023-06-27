@@ -1,31 +1,32 @@
 import React from 'react';
+import { Route, Routes} from 'react-router-dom';
+import {Suspense} from 'react';
 import { useEffect } from 'react';
-import ContactForm from './components/ContactForm/ContactForm.jsx';
-import ContactList from './components/ContactList/ContactList.jsx';
-import Filter from './components/Filter/Filter.jsx';
-import {getTasks, getLoading, errorMessage} from './redux/contacts/selectors.js';
-import {useSelector, useDispatch} from 'react-redux';
+import Layout from './components/Layout.jsx'
+import Collection from './components/Collection/Collection.jsx';
+import Register from './components/Register/Register.jsx';
+import {useDispatch} from 'react-redux';
 import {getAllcontacts} from './redux/operations.js';
-import mainStyle from './index.css';
 
 
 export const App = () => {
   const dispatch = useDispatch();
-  const isLoading = useSelector(getLoading);
-  const error = useSelector(errorMessage);
+ 
   useEffect(() => {
     dispatch(getAllcontacts());
   }, [dispatch]);
-  const contacts = useSelector(getTasks);
+  
   return (
-    <div className={mainStyle.container}
-  >
-    <h1>Phonebook</h1>
-    <ContactForm />
-    {contacts.length > 0 || <Filter />}
-    {isLoading && !error && <b>Request in progress...</b>}
-    {!error && <ContactList />}
-  </div>
+    <Suspense>
+      <Routes>
+        <Route path = '/register' element={Layout} > 
+        <Route index element ={Register} />
+        <Route path='login'>
+        <Route path='contacts' element = {Collection}/>
+        </Route>
+       </Route>
+      </Routes>
+    </Suspense>
   )
 }
 
