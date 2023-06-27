@@ -44,7 +44,7 @@ export default function ContactList() {
         <h2>Contacts</h2>
         {!contacts.length < 0 ? <p>No data contacts!</p> : undefined}
       </li>
-      {contactsName?.length || isLoading ? (
+      {contactsName.length > 0 || isLoading ? (
         [...contactsName].map((contact, idx, arr) => (
           <List key={contact.id}>
             {contact.name + ":" + contact.phone}
