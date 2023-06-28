@@ -1,8 +1,8 @@
-const ErrorNotify = () => {
+const ErrNotify = () => {
 return (
     <>
         <p>Error message, please Sign In first</p>
     </>
     )
 }
-export default ErrorNotify
+export default ErrNotify

@@ -22,10 +22,9 @@ export const App = () => {
       <Routes>
         <Route path = '/' element={<Layout/>} > 
         <Route path = 'register' element ={<Register/>} />
-        <Route path='login' element = {<ContactLogin/>}>
+        <Route path='login' element = {<ContactLogin/>}/>
         <Route path='contacts' element = {<Collection/>}/>
-        </Route>
-       </Route>
+      </Route>
       </Routes>
     </Suspense>
   )
