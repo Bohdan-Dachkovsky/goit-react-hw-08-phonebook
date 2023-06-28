@@ -2,9 +2,10 @@ import React from 'react';
 import { Route, Routes} from 'react-router-dom';
 import {Suspense} from 'react';
 import { useEffect } from 'react';
-import {Layout} from './components/Layout.jsx'
-import {Collection} from './components/Collection/Collection.jsx';
-import {Register} from './components/Register/Register.jsx';
+import Layout from './components/Layout/Layout.jsx'
+import Collection from './components/Collection/Collection.jsx';
+import Register from './components/Register/Register.jsx';
+import ContactLogin from './components/ContactLogin/ContactLogin.jsx'
 import {useDispatch} from 'react-redux';
 import {getAllcontacts} from './redux/operations.js';
 
@@ -19,10 +20,10 @@ export const App = () => {
   return (
     <Suspense>
       <Routes>
-        <Route path = '/register' element={Layout} > 
-        <Route index element ={Register} />
-        <Route path='login'>
-        <Route path='contacts' element = {Collection}/>
+        <Route path = '/' element={<Layout/>} > 
+        <Route path = 'register' element ={<Register/>} />
+        <Route path='login' element = {<ContactLogin/>}>
+        <Route path='contacts' element = {<Collection/>}/>
         </Route>
        </Route>
       </Routes>

@@ -32,7 +32,6 @@ font-weight: 500;
 
 &.active {
   color: black;
-  text-decoration: underline;
 }
 `;
 // const CarouselContainer = styled.div` — your styles `;
