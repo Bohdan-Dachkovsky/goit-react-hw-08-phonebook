@@ -1,0 +1,26 @@
+.wrapperForm {
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+
+    }
+    .field {
+    max-width: 350px;
+    max-height: 50px;
+    border: 1px solid black; 
+    margin-bottom: 10px;
+    text-decoration: none;
+    text-align: start;
+    }
+    .clickBtn {
+    display: block;
+    max-width: 100px;
+    min-height: 40px;
+    margin: 25px 0px;
+    margin-left: inherit;
+    letter-spacing: none;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-align: center;
+    }
