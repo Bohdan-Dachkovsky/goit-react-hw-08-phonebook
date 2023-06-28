@@ -1,10 +1,10 @@
-import { Outlet } from "react-router-dom"
-import UserMenu from '../UserMenu/UserMenu'
+import { Link } from "react-router-dom"
+
 const ContactLogin = () => {
 return (
 <div>
-<UserMenu/>
-<Outlet/>
+
+<Link to ='/contacts'></Link>
 </div>
     )
 }

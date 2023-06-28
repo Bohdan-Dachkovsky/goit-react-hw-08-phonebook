@@ -1,4 +1,6 @@
 import {getTasks, getLoading, errorMessage} from '../../redux/contacts/selectors.js';
+import UserMenu from '../UserMenu/UserMenu'
+import ErrorNotify from '../ErrorMessage/ErrorNotify'
 import ContactForm from '../ContactForm/ContactForm';
 import ContactList from '../ContactList/ContactList';
 import Filter from '../Filter/Filter';
@@ -11,6 +13,7 @@ const Collection = () => {
 return (
     <div className={bookStyle.container}
   >
+    {isLoading ? UserMenu : <ErrorNotify/>}
     <h1>Phonebook</h1>
     <ContactForm />
     {contacts.length > 0 || <Filter />}

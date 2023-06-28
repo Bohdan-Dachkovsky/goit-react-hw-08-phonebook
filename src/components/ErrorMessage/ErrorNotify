@@ -1,0 +1,8 @@
+const ErrorNotify = () => {
+return (
+    <>
+        <p>Error message, please Sign In first</p>
+    </>
+    )
+}
+export default ErrorNotify
