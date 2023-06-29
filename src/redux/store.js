@@ -1,8 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { contactReducer } from "./contacts/contactSlice.js";
-import { authSlice } from ".//authSlice.js";
-
+import { authReducer } from "./master/authSlice.js";
+import { combineReducers } from 'redux'
+const reducer = combineReducers({
+  verification: authReducer,
+  page: contactReducer,
+})
 export const store = configureStore({
-    verification: authSlice,
-    page: contactReducer,
+    reducer
 });

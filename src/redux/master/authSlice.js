@@ -25,8 +25,8 @@ export const testSlice = createSlice({
     [register.pending]: handlePending,
     [register.rejected]: handleRejected,
     [register.fulfilled]: (state, action) => {
-      state.user.push(action.payload.user);
-      state.token = action.payload.token
+      state.user =action.payload;
+      state.token = action.payload.token;
       state.isLoggedIn = true;
       state.isRefreshing = true;
       state.error = null;
@@ -36,8 +36,8 @@ export const testSlice = createSlice({
     [login.pending]: handlePending,
     [login.rejected]: handleRejected,
     [login.fulfilled]: (state, action) => {
-        state.user.push(action.payload);
-        state.token = action.payload.token
+        state.user =action.payload;
+        state.token = action.payload.token;
         state.isLoggedIn = true;
     },
 
