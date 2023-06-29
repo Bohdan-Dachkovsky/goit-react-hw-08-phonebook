@@ -50,8 +50,8 @@ export const testSlice = createSlice({
     [getNewUser.pending]: handlePending,
     [getNewUser.rejected]: handleRejected,
     [getNewUser.fulfilled](state, action) {
-        state.user.push(action.payload);
-        state.token = action.payload.token
+        state.user = action.payload;
+        state.token = action.payload.token;
         state.isLoggedIn = true;
     },
 },
