@@ -21,11 +21,14 @@ const Register = () => {
       number: '',
     })
   };
+
 return (
     <div>
 <form className={style.wrapperForm} onSubmit ={handleSubmit}>
+  <div className={style.wrapper}>
       <label className={style.wrapperForm}>
-        Name&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Name
         <input
           type="text"
           name="name"
@@ -37,7 +40,8 @@ return (
         />
       </label>
       <label className={style.wrapperForm}>
-        Email &nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Email 
         <input
           type="text"
           name="email"
@@ -49,7 +53,8 @@ return (
         />
       </label>
       <label className={style.wrapperForm}>
-        Password &nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      Password
         <input
           type="text"
           name="password"
@@ -61,7 +66,7 @@ return (
         />
       </label>
       <button type="Submit" className={style.clickBtn}>Register</button>
-      </form>
+       </div>      </form>
     </div>
     )
 }

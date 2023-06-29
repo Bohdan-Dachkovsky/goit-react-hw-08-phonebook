@@ -2,16 +2,20 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  height: 100vh;
+  display:block
+  text-align: center;
+  color: white;
+  font-size: 30px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justifycontent: center;
   alignitems: center;
   fontsize: 40;
   color: rgb(0, 0, 0);
 `;
 const Navigation = styled.nav`
-  width: auto;
+  width: inherit;
+  height: 80px;
   margin: 0px;
   font-size: bold;
   font-weight: 700;

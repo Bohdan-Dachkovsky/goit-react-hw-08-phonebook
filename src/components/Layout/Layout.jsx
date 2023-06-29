@@ -1,24 +1,24 @@
 import { Outlet } from "react-router-dom"
 import {Container, Navigation, Link} from '../index.js'
-import btnStyle from './style.module.css'
+import blockCSS from './style.module.css'
 const Layout = () => {
 return (
     <Container>
       <Navigation>
-        <nav className={btnStyle.navigation}>
-          <li className={btnStyle.homeStyle}>
+        <nav className={blockCSS.navigation}>
+          <li className={blockCSS.homeStyle}>
             <Link to = "/">Home</Link>
           </li>
-          <li className={btnStyle.linkStyle}>
+          <li className={blockCSS.linkStyle}>
             <Link to="/register">Signup</Link>
           </li>
-          <li className={btnStyle.linkStyle}>
+          <li className={blockCSS.linkStyle}>
             <Link to="login">Login</Link>
           </li>
         </nav>
       </Navigation>
 
-      <main> 
+      <main className = {blockCSS.container}> 
       <Outlet/>
       </main>
     </Container>
