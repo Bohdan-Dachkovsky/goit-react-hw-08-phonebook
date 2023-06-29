@@ -1,4 +1,4 @@
-export const getTasks = state => state.page.user;
-export const getToken = state => state.page.token;
-export const isLoggedin= state => state.page.isLoggedIn;
-export const getActive = state => state.page.isRefreshing;
+export const getTasks = state => state.auth.user;
+export const getToken = state => state.auth.token;
+export const isLoggedin= state => state.auth.isLoggedIn;
+export const getActive = state => state.auth.isRefreshing;
