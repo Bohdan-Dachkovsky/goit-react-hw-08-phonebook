@@ -1,3 +1,15 @@
+.homeStyle {
+  max-height: 50px;
+  display: 'flex';
+  text-decoration: none;
+  list-style: none;
+  margin-right: 700px;
+}
+.navigation{
+display: flex;
+flex-direction: row;
+max-height: 50px;
+}
 .linkStyle {
     display: 'flex';
     margin: '1rem';

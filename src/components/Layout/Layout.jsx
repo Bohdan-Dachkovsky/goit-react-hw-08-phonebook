@@ -5,7 +5,10 @@ const Layout = () => {
 return (
     <Container>
       <Navigation>
-        <nav className="navigation">
+        <nav className={btnStyle.navigation}>
+          <li className={btnStyle.homeStyle}>
+            <Link to = "/">Home</Link>
+          </li>
           <li className={btnStyle.linkStyle}>
             <Link to="/register">Signup</Link>
           </li>
