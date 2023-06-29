@@ -10,9 +10,9 @@ axios.defaults.headers.common.Authorization = ''},
 
 }
 
-export const register = createAsyncThunk('task/register', async (newArray, thunkAPI) => {
+export const register = createAsyncThunk('task/register', async ({name, email, password}, thunkAPI) => {
       try {
-            const {data} = await axios.get(`/users/signup`, newArray)
+            const {data} = await axios.get(`/users/signup`, {name, email, password})
             token.set(data.token)
             return data
       }
