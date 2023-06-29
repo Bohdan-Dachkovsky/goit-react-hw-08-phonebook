@@ -7,7 +7,7 @@ import Collection from './components/Collection/Collection.jsx';
 import Register from './components/Register/Register.jsx';
 import ContactLogin from './components/ContactLogin/ContactLogin.jsx'
 import {useDispatch} from 'react-redux';
-import {getAllcontacts} from './redux/operations.js';
+import {getAllcontacts, getNewUser} from './redux/operations.js';
 
 
 export const App = () => {
@@ -16,14 +16,17 @@ export const App = () => {
   useEffect(() => {
     dispatch(getAllcontacts());
   }, [dispatch]);
+  useEffect(() => {
+    dispatch(getNewUser());
+  }, [dispatch]);
   
   return (
     <Suspense>
       <Routes>
         <Route path = '/' element={<Layout/>} > 
         <Route path = 'register' element ={<Register/>} />
-        <Route path='login' element = {<ContactLogin/>}/>
-        <Route path='contacts' element = {<Collection/>}/>
+        <Route path= 'login' element = {<ContactLogin/>}/>
+        <Route path= 'contacts' element = {<Collection/>}/>
       </Route>
       </Routes>
     </Suspense>

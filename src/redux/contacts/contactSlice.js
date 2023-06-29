@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {addUser, dltUser, getAllcontacts} from '../operations.js';
+import { addUser, dltUser, getAllcontacts} from '../operations.js';
 
 const handlePending = state => {
   state.isLoading = true;
@@ -23,6 +23,7 @@ export const contactSlice = createSlice({
     },
   },
   extraReducers: {
+    
     [addUser.pending]: handlePending,
     [addUser.fulfilled]: (state, action) => {
       state.items.push(action.payload);

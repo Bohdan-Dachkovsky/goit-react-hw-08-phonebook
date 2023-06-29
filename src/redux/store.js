@@ -1,6 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { contactReducer } from "./contacts/contactSlice.js";
+import { authSlice } from ".//authSlice.js";
 
 export const store = configureStore({
-  reducer: contactReducer,
+    verification: authSlice,
+    page: contactReducer,
 });

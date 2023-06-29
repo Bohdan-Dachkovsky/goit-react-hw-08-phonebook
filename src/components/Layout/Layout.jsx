@@ -14,6 +14,7 @@ return (
           </li>
         </nav>
       </Navigation>
+
       <main> 
       <Outlet/>
       </main>
