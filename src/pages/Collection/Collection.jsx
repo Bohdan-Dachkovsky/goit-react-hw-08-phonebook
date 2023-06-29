@@ -1,9 +1,9 @@
 import {getTasks, getLoading, errorMessage} from '../../redux/contacts/selectors.js';
-import UserMenu from '../UserMenu/UserMenu'
-import ErrNotify from '../ErrNotify/ErrNotify.jsx'
-import ContactForm from '../ContactForm/ContactForm';
-import ContactList from '../ContactList/ContactList';
-import Filter from '../Filter/Filter';
+import UserMenu from '../../components/UserMenu/UserMenu.jsx'
+import ErrNotify from '../../components/ErrNotify/ErrNotify.jsx'
+import ContactForm from '../../components/ContactForm/ContactForm.jsx';
+import ContactList from '../../components/ContactList/ContactList.jsx';
+import Filter from '../../components/Filter/Filter.jsx';
 import { useSelector } from 'react-redux';
 import bookStyle from './index.module.css';
 const Collection = () => {

@@ -13,7 +13,7 @@ const handleRejected = (state, action) => {
 };
 
 export const testSlice = createSlice({
-  name: 'user',
+  name: 'auth',
   initialState: {
     user: { name: null, email: null },
     token: null,
