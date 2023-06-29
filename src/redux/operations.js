@@ -44,6 +44,12 @@ export const logout = createAsyncThunk('task/logout', async (_, thunkAPI) => {
       
 } )
 export const getNewUser = createAsyncThunk('task/getNewUser', async (_, thunkAPI) => {
+      const state = thunkAPI.getState()
+      const historyToken = state.auth.token
+      if(historyToken === null) {
+      return thunkAPI.rejectWithValue
+      }
+      token.set(historyToken)
 try {
       const {data} = await axios.get('/users/current')
       return data
