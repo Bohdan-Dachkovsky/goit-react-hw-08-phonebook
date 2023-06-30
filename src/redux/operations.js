@@ -22,9 +22,9 @@ export const register = createAsyncThunk('task/register', async (credentials, th
       }
       
 } )
-      export const login = createAsyncThunk('task/login', async ({email, password}, thunkAPI) => {
+      export const login = createAsyncThunk('task/login', async (credentials, thunkAPI) => {
       try {
-            const {data} = await axios.post(`/users/login`, {email, password})
+            const {data} = await axios.post(`/users/login`, credentials)
             token.set(data.token)
             return data
       }
