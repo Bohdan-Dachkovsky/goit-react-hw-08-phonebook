@@ -28,7 +28,7 @@
   outline: 0;
 }
 
-.TaskEditorinput:focus {
+.TaskEditor:focus {
   border: 1px solid #2b32b2;
 }
 

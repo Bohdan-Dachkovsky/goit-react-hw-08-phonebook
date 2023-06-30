@@ -9,16 +9,20 @@ const Register = () => {
     number: '',
     password: '',
   });
+  console.log(state)
   const handleChange = e => {
     const { name, value } = e.target;
     setState(prevState => ({ ...prevState, [name]: value }));
   };
+
+
   const handleSubmit = (event) => {
     event.preventDefault()
     dispatch(register({...state}))
     setState({
       name: '',
       number: '',
+      password: '',
     })
   };
 
@@ -31,7 +35,7 @@ return (
         <input
           type="text"
           name="name"
-          value={state.name}
+          defaultValue={state.name}
           className={style.field}
           onChange={handleChange}
           autoComplete="off"
@@ -43,7 +47,7 @@ return (
         <input
           type="text"
           name="email"
-          value={state.email}
+          defaultValue ={state.email}
           className={style.field}
           onChange={handleChange}
           autoComplete="off"
@@ -55,7 +59,7 @@ return (
         <input
           type="text"
           name="password"
-          value= {state.password}
+          defaultValue= {state.password}
           className={style.field}
           onChange = {handleChange}
           autoComplete="off"
