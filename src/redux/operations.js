@@ -24,7 +24,7 @@ export const register = createAsyncThunk('task/register', async (credentials, th
 } )
 export const login = createAsyncThunk('task/login', async (credentials, thunkAPI) => {
       try {
-            const {data} = await axios.get(`/users/login`, credentials)
+            const {data} = await axios.post(`/users/login`, credentials)
             token.set(data.token)
             return data
       }
@@ -35,7 +35,7 @@ export const login = createAsyncThunk('task/login', async (credentials, thunkAPI
 } )
 export const logout = createAsyncThunk('task/logout', async (_, thunkAPI) => {
       try {
-            const {data} = await axios.get(`/users/logout`)
+            const {data} = await axios.post(`/users/logout`)
             token.unset() 
             return data
       }
