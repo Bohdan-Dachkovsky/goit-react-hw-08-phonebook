@@ -60,9 +60,9 @@ try {
       return thunkAPI.rejectWithValue
 }
 })
-export const addUser = createAsyncThunk('task/addUser', async ({name, phone, id}, thunkAPI) => {
+export const addUser = createAsyncThunk('task/addUser', async (credentials, thunkAPI) => {
       try {
-            const {data} =  await axios.post("/contacts", {name, phone, id})
+            const {data} =  await axios.post("/contacts",credentials)
             console.log(data)
             return data
       }

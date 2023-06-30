@@ -4,7 +4,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import { addUser } from '../../redux/operations.js';
 import { getTasks } from '../../redux/contacts/selectors.js';
-import nextId from 'react-id-generator';
+
 
 const Label = styled.label`
   display: flex;
@@ -73,7 +73,6 @@ export default function ContactForm() {
       dispatch(
         addUser({
           ...state,
-          id: nextId(),
         })
       );
       setState({

@@ -19,7 +19,7 @@ export const contactSlice = createSlice({
   },
   reducers: {
     searchContacts: (state, action) => {
-      state.filter = action.payload;
+      state.filter = action.payload.user;
     },
   },
   extraReducers: {

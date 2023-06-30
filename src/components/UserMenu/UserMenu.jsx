@@ -1,10 +1,16 @@
+import { useSelector, useDispatch } from 'react-redux';
+import { getName } from '../../redux/master/selectors.js';
+import {logout} from '../../redux/operations.js'
 import informStyle from './styled.module.css'
 const UserMenu = () => {
+  const dispatch = useDispatch()
+  // const active = useSelector(getActive)
+  const customer = useSelector(getName)
 return (
-    <div className={informStyle.userBar}>
+    <div className={informStyle.userBar.currentUser}>
 <div className={informStyle.userBar}>
-  <p>bohdan@mail.com</p>
-  <button>Logout</button>
+ <h1 className={informStyle.mainName}>{customer}</h1>
+  <button type='button' onClick={() => dispatch(logout())}>Logout</button>
 </div>
     </div>
     );
