@@ -1,31 +1,31 @@
 .homeStyle {
   max-height: 50px;
-  display: 'flex';
+  display: "flex";
   text-decoration: none;
   list-style: none;
-  margin-right: 700px;
+  order: 1;
+  margin-right: 400px;
 }
-.navigation{
-display: flex;
-flex-direction: row;
-max-height: 50px;
+.navigation {
+  display: flex;
+  flex-direction: row;
+  max-height: 50px;
 }
 .linkStyle {
-    display: 'flex';
-    margin: '1rem';
-    flex-direction: 'row';
-    text-decoration: 'none';
-    list-style: none;
-  };
+  display: "flex";
+  margin: "1rem";
+  order: 2;
+  flex-direction: "row";
+  text-decoration: "none";
+  list-style: none;
+}
 .container {
-display: flex;
-flex-wrap: wrap;
-flex-direction: column;
-
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 .textLights {
-    display: 'block';
-    width: '15px';
-    height: '15px';
-  };
-  
+  display: "block";
+  width: "15px";
+  height: "15px";
+}

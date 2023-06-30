@@ -1,0 +1,11 @@
+.userBar > p {
+  margin: 0px;
+  padding: 0px;
+}
+.userBar {
+  margin: 0px;
+  padding: 0px;
+  order: 4;
+  position: absolute;
+  left: 500px;
+}

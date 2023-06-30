@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  display:block
+  display:block;
   text-align: center;
   color: white;
   font-size: 30px;
@@ -13,8 +13,21 @@ const Container = styled.div`
   fontsize: 40;
   color: rgb(0, 0, 0);
 `;
+const Header = styled.header`
+  width: 1200px
+  height: 80px;
+  margin: 0px;
+  border-bottom: 1px solid black;
+  margin-bottom: -1px;
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  textdecoration: none;
+`
 const Navigation = styled.nav`
-  width: inherit;
+  max-width: 100px;
   height: 80px;
   margin: 0px;
   font-size: bold;
@@ -42,4 +55,4 @@ font-weight: 500;
 // const StyledComponent = styled.div` — your styles `;
 
 
-export { Container, Navigation, Link };
+export { Container, Header, Navigation, Link };

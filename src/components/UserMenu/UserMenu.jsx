@@ -1,7 +1,8 @@
+import informStyle from './styled.module.css'
 const UserMenu = () => {
 return (
-    <div>
-<div>
+    <div className={informStyle.userBar}>
+<div className={informStyle.userBar}>
   <p>bohdan@mail.com</p>
   <button>Logout</button>
 </div>

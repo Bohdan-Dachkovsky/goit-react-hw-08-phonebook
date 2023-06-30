@@ -27,7 +27,6 @@ return (
 <form className={style.wrapperForm} onSubmit ={handleSubmit}>
   <div className={style.wrapper}>
       <label className={style.wrapperForm}>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     Name
         <input
           type="text"
@@ -40,7 +39,6 @@ return (
         />
       </label>
       <label className={style.wrapperForm}>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       Email 
         <input
           type="text"
@@ -53,7 +51,6 @@ return (
         />
       </label>
       <label className={style.wrapperForm}>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
       Password
         <input
           type="text"
@@ -66,7 +63,8 @@ return (
         />
       </label>
       <button type="Submit" className={style.clickBtn}>Register</button>
-       </div>      </form>
+       </div>      
+       </form>
     </div>
     )
 }

@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom"
+import {  Outlet } from "react-router-dom"
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/operations";
 import { useState } from "react";
@@ -27,7 +27,7 @@ const ContactLogin = () => {
 return (
 <div>
 <form className={formCss.wrapperForm} onSubmit = {handleSubmit}>
-      <label>
+      <label >
         Name&nbsp;
         <input
           type="text"
@@ -53,7 +53,6 @@ return (
       </label>
       <button type="submit" className={formCss.clickBtn}>Enter</button>
     </form>
-<Link to ='/contacts'>Phonebook acc</Link>
 <Outlet/>
 </div>
     )

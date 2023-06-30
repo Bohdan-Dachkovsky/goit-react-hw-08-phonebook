@@ -1,6 +1,5 @@
 import {getTasks, getLoading, errorMessage} from '../../redux/contacts/selectors.js';
-import UserMenu from '../../components/UserMenu/UserMenu.jsx'
-import ErrNotify from '../../components/ErrNotify/ErrNotify.jsx'
+
 import ContactForm from '../../components/ContactForm/ContactForm.jsx';
 import ContactList from '../../components/ContactList/ContactList.jsx';
 import Filter from '../../components/Filter/Filter.jsx';
@@ -13,7 +12,7 @@ const Collection = () => {
 return (
     <div className={bookStyle.container}
   >
-    {isLoading ? UserMenu : <ErrNotify/>}
+
     {contacts.length > 0 && <h1>Phonebook</h1> && <ContactForm />}
     {contacts.length > 0 || <Filter />}
     {isLoading && !error && <b>Request in progress...</b>}

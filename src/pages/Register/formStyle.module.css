@@ -1,5 +1,8 @@
-div > .wrapperForm:nth-child(1n) {
+div > .wrapperForm:nth-child(3n + 1) {
   margin-left: 100px;
+}
+.wrapper label:nth-child(1) {
+  margin-left: 0px;
 }
 .wrapperForm > label::after {
   content: "\00a0";
@@ -8,14 +11,7 @@ div > .wrapperForm:nth-child(1n) {
 form:last-child {
   flex-direction: column;
 }
-div > form .field {
-  margin-left: 100px;
-}
-span {
-  width: 400px;
-  margin-left: 15rem;
-  padding-left: 100px;
-}
+
 div > .wrapperForm {
   flex-direction: column;
   width: 800px;
@@ -57,4 +53,6 @@ div > .wrapperForm {
 }
 .wrapper {
   flex-direction: row;
+  width: auto;
+  margin: 0px;
 }
