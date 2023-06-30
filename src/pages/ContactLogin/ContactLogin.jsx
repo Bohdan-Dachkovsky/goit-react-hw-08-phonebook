@@ -12,7 +12,7 @@ const ContactLogin = () => {
   const handleSubmit = (e) => {
   e.preventDefault()
   if (state.name && state.number) {
-  dispatch(login(state))
+  dispatch(login({...state}))
   setState({
     name: '',
     number: '',

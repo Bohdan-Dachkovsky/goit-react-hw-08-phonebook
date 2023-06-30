@@ -10,10 +10,11 @@ axios.defaults.headers.common.Authorization = ''},
 
 }
 
-export const register = createAsyncThunk('task/register', async ({name, email, password}, thunkAPI) => {
+export const register = createAsyncThunk('task/register', async (credentials, thunkAPI) => {
       try {
-            const {data} = await axios.get(`/users/signup`, {name, email, password})
+            const {data} = await axios.get(`/users/signup`, credentials)
             token.set(data.token)
+            
             return data
       }
       catch (error) {
@@ -21,9 +22,9 @@ export const register = createAsyncThunk('task/register', async ({name, email, p
       }
       
 } )
-export const login = createAsyncThunk('task/login', async (newArray, thunkAPI) => {
+export const login = createAsyncThunk('task/login', async (credentials, thunkAPI) => {
       try {
-            const {data} = await axios.get(`/users/login`, newArray)
+            const {data} = await axios.get(`/users/login`, credentials)
             token.set(data.token)
             return data
       }

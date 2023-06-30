@@ -7,16 +7,16 @@ import Collection from './pages/Collection/Collection.jsx';
 import Register from './pages/Register/Register.jsx';
 import ContactLogin from './pages/ContactLogin/ContactLogin.jsx'
 import {useDispatch} from 'react-redux';
-import {getAllcontacts, getNewUser} from './redux/operations.js';
+import { getNewUser} from './redux/operations.js';
 import Home from './pages/Home/Home.jsx';
 
 
 export const App = () => {
   const dispatch = useDispatch();
  
-  useEffect(() => {
-    dispatch(getAllcontacts());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getAllcontacts());
+  // }, [dispatch]);
   useEffect(() => {
     dispatch(getNewUser());
   }, [dispatch]);

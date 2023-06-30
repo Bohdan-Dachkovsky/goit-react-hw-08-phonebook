@@ -15,7 +15,7 @@ const Register = () => {
   };
   const handleSubmit = (event) => {
     event.preventDefault()
-    dispatch(register(state))
+    dispatch(register({...state}))
     setState({
       name: '',
       number: '',

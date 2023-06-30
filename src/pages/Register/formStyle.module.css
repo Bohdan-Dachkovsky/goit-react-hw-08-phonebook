@@ -14,12 +14,13 @@ form:last-child {
 
 div > .wrapperForm {
   flex-direction: column;
-  width: 800px;
+  max-width: 350px;
 }
 .wrapperForm {
   display: flex;
   margin: 0px;
   padding: 0px;
+  text-align: start;
 }
 .field {
   position: relative;
@@ -32,7 +33,7 @@ div > .wrapperForm {
 }
 .clickBtn {
   top: 140px;
-  left: 750px;
+  left: 570px;
   width: 200px;
   appearance: none;
   position: absolute;
