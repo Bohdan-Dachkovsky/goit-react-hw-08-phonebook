@@ -6,10 +6,10 @@ const Register = () => {
   const dispatch = useDispatch() 
   const [state, setState] = useState({
     name: '',
-    number: '',
+    email: '',
     password: '',
   });
-  console.log(state)
+
   const handleChange = e => {
     const { name, value } = e.target;
     setState(prevState => ({ ...prevState, [name]: value }));
@@ -21,7 +21,7 @@ const Register = () => {
     dispatch(register({...state}))
     setState({
       name: '',
-      number: '',
+      email: '',
       password: '',
     })
   };
