@@ -16,7 +16,7 @@ return (
     {contacts.length > 0 && <h1>Phonebook</h1> && <ContactForm />}
     {contacts.length > 0 || <Filter />}
     {isLoading && !error && <b>Request in progress...</b>}
-    {!error && <ContactList />})
+    {!error && <ContactList />}
   </div>
     )
 }
