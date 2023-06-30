@@ -78,7 +78,7 @@ export default function ContactForm() {
       );
       setState({
         name: '',
-        number: '',
+        email: '',
       });
     }
     const searchSameName = contacts.name === state.name;

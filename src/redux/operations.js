@@ -10,12 +10,12 @@ axios.defaults.headers.common.Authorization = ''},
 
 }
 
-export const register = createAsyncThunk('task/register', async (credentials, thunkAPI) => {
+export const register = createAsyncThunk('task/register', async ({ name, email, password }, thunkAPI) => {
       try {
-            const {data} = await axios.get(`/users/signup`, credentials)
-            token.set(data.token)
-            
-            return data
+            const response = await axios.get(`/users/signup`, { name, email, password })
+            // token.set(data.token)
+            console.log(response.data)
+            return response.data
       }
       catch (error) {
             thunkAPI.rejectWithValue(error.message) 
