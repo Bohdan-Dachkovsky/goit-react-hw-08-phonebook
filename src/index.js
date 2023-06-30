@@ -7,18 +7,18 @@ import {store} from './redux/store.js';
 import './index.css';
 import { persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react'
-import { BrowserRouter as Route} from 'react-router-dom'
+import { BrowserRouter} from 'react-router-dom'
 let persistor = persistStore(store)
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
 <Provider store={store}>
 <React.StrictMode>
-<Route  basename="/goit-react-hw-08-phonebook">
+<BrowserRouter  basename="/goit-react-hw-08-phonebook">
 <PersistGate loading={null} persistor={persistor}>
  <App />
  </PersistGate>
- </Route>
+ </BrowserRouter>
  </React.StrictMode>
 </Provider>
 
