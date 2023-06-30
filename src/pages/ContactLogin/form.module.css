@@ -1,14 +1,26 @@
+label {
+  margin: 0px;
+  padding: 0px;
+  text-align: start;
+}
+input {
+  margin: 0px;
+  padding: 0px;
+}
 .wrapperForm {
   max-width: 450px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   margin-left: 100px;
 }
 .field {
-  width: 350px;
+  width: 400px;
+  margin: 0px;
+  padding: 0px;
   max-height: 50px;
   border: 1px solid black;
-  margin-top: 30px;
+  text-rendering: optimizeLegibility;
   text-decoration: none;
   text-align: start;
 }

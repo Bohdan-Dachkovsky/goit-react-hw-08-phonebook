@@ -27,8 +27,8 @@ const ContactLogin = () => {
 return (
 <div>
 <form className={formCss.wrapperForm} onSubmit = {handleSubmit}>
-      <label >
-        Email&nbsp;
+      <label>
+        Email
         <input
           type="text"
           name="email"
@@ -40,7 +40,7 @@ return (
         />
       </label>
       <label>
-        Password &nbsp;
+        Password 
         <input
           type="text"
           name="password"
