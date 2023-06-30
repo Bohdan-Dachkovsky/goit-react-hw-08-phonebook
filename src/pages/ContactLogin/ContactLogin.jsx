@@ -6,16 +6,16 @@ import formCss from './form.module.css'
 const ContactLogin = () => {
   const dispatch = useDispatch()
   const [state, setState] = useState({
-    name: '',
-    number: '',
+    email: '',
+    password: '',
   });
   const handleSubmit = (e) => {
   e.preventDefault()
   if (state.name && state.number) {
   dispatch(login({...state}))
   setState({
-    name: '',
-    number: '',
+    email: '',
+    password: '',
   })
   }
   }
@@ -28,11 +28,11 @@ return (
 <div>
 <form className={formCss.wrapperForm} onSubmit = {handleSubmit}>
       <label >
-        Name&nbsp;
+        Email&nbsp;
         <input
           type="text"
-          name="name"
-          value={state.name}
+          name="email"
+          value={state.email}
           onChange={handleChange}
           className={formCss.field}
           autoComplete="off"
@@ -40,11 +40,11 @@ return (
         />
       </label>
       <label>
-        Email &nbsp;
+        Password &nbsp;
         <input
           type="text"
-          name="email"
-          value={state.email}
+          name="password"
+          value={state.password}
           onChange={handleChange}
           className={formCss.field}
           autoComplete="off"
