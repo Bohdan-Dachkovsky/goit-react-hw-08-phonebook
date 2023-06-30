@@ -32,7 +32,7 @@ return (
         <input
           type="text"
           name="email"
-          value={state.email}
+          defaultValue={state.email}
           onChange={handleChange}
           className={formCss.field}
           autoComplete="off"
@@ -44,7 +44,7 @@ return (
         <input
           type="text"
           name="password"
-          value={state.password}
+          defaultValue={state.password}
           onChange={handleChange}
           className={formCss.field}
           autoComplete="off"
