@@ -1,1 +1,1 @@
-export {default as ErrNotify} from './ErrNotify.js'
+export {default as ErrNotify} from './ErrNotify.jsx'
