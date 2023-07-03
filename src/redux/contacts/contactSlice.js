@@ -10,7 +10,7 @@ const handleRejected = (state, action) => {
 };
 
 export const contactSlice = createSlice({
-  name: 'users',
+  name: "users",
   initialState: {
     items: [ 
     { id: 1, name: 'Rasel Dosh', number: '093-8383-355' },
@@ -40,7 +40,6 @@ export const contactSlice = createSlice({
       const index = state.items.findIndex(
         (task) => task.id === action.payload.id
       );
-
       state.items.splice(index, 1);
     },
     [dltUser.rejected]: handleRejected,
@@ -58,3 +57,4 @@ export const contactSlice = createSlice({
 
 export const { searchContacts } = contactSlice.actions;
 export const contactReducer = contactSlice.reducer;
+

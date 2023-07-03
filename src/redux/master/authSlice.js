@@ -1,26 +1,23 @@
-import { createSlice } from '@reduxjs/toolkit';
-import {register, login, logout, refreshUser} from '../operations.js';
+import { createSlice } from "@reduxjs/toolkit";
+import { register, login, logout, refreshUser } from "../operations.js";
 
-const handlePending = state => {
+const handlePending = (state) => {
   state.isLoggedIn = false;
-
 };
 const handleRejected = (state, action) => {
   state.isLoggedIn = false;
-  state.isRefreshing = action.payload;
-
-
+  state.isRefreshing = false;
 };
 
 export const testSlice = createSlice({
-  name: 'auth',
+  name: "auth",
   initialState: {
     user: { name: null, email: null },
     token: null,
     isLoggedIn: false,
     isRefreshing: false,
   },
-  
+
   extraReducers: {
     [register.pending]: handlePending,
     [register.rejected]: handleRejected,
@@ -59,7 +56,7 @@ export const testSlice = createSlice({
       state.isLoggedIn = true;
       state.isRefreshing = true;
     },
-},
+  },
 });
 
 export const authReducer = testSlice.reducer;
