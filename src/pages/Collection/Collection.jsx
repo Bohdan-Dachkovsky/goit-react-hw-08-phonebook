@@ -20,8 +20,8 @@ return (
     <div className={bookStyle.container}
   >
 
-    {contacts.length > 0 && <h1>Phonebook</h1> && <ContactForm />}
-    {contacts.length > 0 || <Filter />}
+    {Array.isArray(contacts) > 0 && <h1>Phonebook</h1> && <ContactForm />}
+    {Array.isArray(contacts)  > 0 || <Filter />}
     {isLoading && !error && <b>Request in progress...</b>}
     {!error && <ContactList />}
   </div>
