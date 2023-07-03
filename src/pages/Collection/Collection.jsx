@@ -1,14 +1,21 @@
 import {getTasks, getLoading, errorMessage} from '../../redux/contacts/selectors.js';
-
+import { useEffect } from 'react';
+import {getAllcontacts} from '../../redux/operations.js'
 import ContactForm from '../../components/ContactForm/ContactForm.jsx';
 import ContactList from '../../components/ContactList/ContactList.jsx';
 import Filter from '../../components/Filter/Filter.jsx';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import bookStyle from './index.module.css';
+
 const Collection = () => {
+    const dispatch = useDispatch()
     const contacts = useSelector(getTasks);
     const isLoading = useSelector(getLoading);
     const error = useSelector(errorMessage);
+
+    useEffect(() => {
+      dispatch(getAllcontacts());
+    }, [dispatch]);
 return (
     <div className={bookStyle.container}
   >

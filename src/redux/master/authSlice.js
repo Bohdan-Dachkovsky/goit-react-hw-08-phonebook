@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {register, login, logout, getNewUser} from '../operations.js';
+import {register, login, logout, refreshUser} from '../operations.js';
 
 const handlePending = state => {
   state.isLoggedIn = false;
@@ -51,9 +51,9 @@ export const testSlice = createSlice({
       state.isRefreshing = false;
     },
  
-    [getNewUser.pending]: handlePending,
-    [getNewUser.rejected]: handleRejected,
-    [getNewUser.fulfilled](state, action) {
+    [refreshUser.pending]: handlePending,
+    [refreshUser.rejected]: handleRejected,
+    [refreshUser.fulfilled](state, action) {
         state.user = action.payload;
         state.token = action.payload.token;
         state.isLoggedIn = true;
