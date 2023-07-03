@@ -26,7 +26,6 @@ export const contactSlice = createSlice({
     },
   },
   extraReducers: {
-    
     [addUser.pending]: handlePending,
     [addUser.fulfilled]: (state, action) => {
       state.items.push(action.payload);

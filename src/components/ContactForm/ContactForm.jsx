@@ -101,7 +101,7 @@ export default function ContactForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Label>
+       <Label>
         Name &nbsp;&nbsp;&nbsp;&nbsp;
         <Input
           type="text"

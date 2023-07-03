@@ -6,7 +6,7 @@ import {
   getTasks,
   getStatusFilter,
   errorMessage,
-  getLoading
+  getLoading,
 } from "../../redux/contacts/selectors.js";
 const TaskList = styled.ul`
   display: block;
@@ -34,9 +34,11 @@ export default function ContactList() {
   const isLoading = useSelector(getLoading);
   const error = useSelector(errorMessage);
   const filtered = useSelector(getStatusFilter);
-  const contactsName = filtered ? [...contacts].filter((contact) =>
-    contact.name.toLowerCase().includes(filtered.toLowerCase())
-  ) : contacts;
+  const contactsName = filtered
+    ? [...contacts].filter((contact) =>
+        contact.name.toLowerCase().includes(filtered.toLowerCase())
+      )
+    : contacts;
   return (
     <TaskList>
       {error || <p>Add contact please!</p>}

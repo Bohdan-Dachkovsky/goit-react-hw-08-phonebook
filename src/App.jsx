@@ -28,7 +28,7 @@ export const App = () => {
         <Route index element ={<Home/>} />
         <Route exact path = '/register' element ={ <RestrictedRoute redirectTo="/contacts" component={<Register/>} />} />
         <Route exact path= '/login' element = { <RestrictedRoute redirectTo="/contacts" component={<ContactLogin/>} /> }/>
-        <Route path= '/contacts' element = {<PrivateRoute redirectTo="/login" component={<Collection/>} />}/>
+        <Route path= '/contacts' element = {<PrivateRoute redirectTo="login" component={<Collection/>} />}/>
       </Route>
       </Routes>
     </Suspense>
