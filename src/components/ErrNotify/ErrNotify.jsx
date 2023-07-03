@@ -1,7 +1,7 @@
 const ErrNotify = () => {
 return (
     <>
-        <p>Error message, please Sign In first</p>
+        <p>Please make registration first</p>
     </>
     )
 }

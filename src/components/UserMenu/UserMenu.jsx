@@ -9,7 +9,7 @@ const UserMenu = () => {
   return (
     <div className={informStyle.userBar.currentUser}>
       <div className={informStyle.userBar}>
-        <h1 className={informStyle.mainName}>{customer === 'rejectWithValue' ? 
+        <h1 className={informStyle.mainName}>{!customer ? 
         customer : <ErrNotify/>
         }</h1>
         <button type="button" onClick={() => dispatch(logout())}>
