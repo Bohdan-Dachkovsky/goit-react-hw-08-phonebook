@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { getName } from "../../redux/master/selectors.js";
 import { logout } from "../../redux/operations.js";
-import {ErrNotify} from '../ErrNotify/ErrNotify.jsx'
+import ErrNotify from '../ErrNotify/ErrNotify.jsx'
 import informStyle from "./styled.module.css";
 const UserMenu = () => {
   const dispatch = useDispatch();
