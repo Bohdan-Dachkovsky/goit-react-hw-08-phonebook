@@ -18,13 +18,15 @@ const Register = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    const form = event.currentTarget;
-    event.preventDefault()
   if (state.name && state.email && state.password) {
     dispatch(register({...state}))
    
   }
-  form.reset();
+  setState({
+    name: '',
+    email: '',
+    password: '',
+  })
   
   };
 
@@ -37,7 +39,7 @@ return (
         <input
           type="text"
           name="name"
-          defaultValue={state.name}
+          value={state.name}
           className={style.field}
           onChange={handleChange}
           autoComplete="off"
@@ -49,7 +51,7 @@ return (
         <input
           type="text"
           name="email"
-          defaultValue ={state.email}
+          value ={state.email}
           className={style.field}
           onChange={handleChange}
           autoComplete="off"
@@ -61,7 +63,7 @@ return (
         <input
           type="text"
           name="password"
-          defaultValue= {state.password}
+          value= {state.password}
           className={style.field}
           onChange = {handleChange}
           autoComplete="off"

@@ -87,6 +87,7 @@ export default function ContactForm() {
     }
     if (searchSameName) {
       alert(`${state.name} is already in contacts`);
+      return;
     } else if (state.name.length === 0) {
       alert('Fields must be filled!');
     } else {

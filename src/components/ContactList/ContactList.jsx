@@ -47,7 +47,7 @@ export default function ContactList() {
       {Array.isArray(contactsName) || isLoading ? (
         [...contactsName].map((contact, idx, arr) => (
           <List key={idx}>
-            {contact.name + ":" + contact.phone}
+            {contact.name + ":" + contact.number}
             <Button
               type="button"
               name="delete"

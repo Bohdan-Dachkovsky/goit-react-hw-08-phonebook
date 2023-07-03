@@ -4,7 +4,6 @@ import {logout} from '../../redux/operations.js'
 import informStyle from './styled.module.css'
 const UserMenu = () => {
   const dispatch = useDispatch()
-  // const active = useSelector(getActive)
   const customer = useSelector(getName)
 return (
     <div className={informStyle.userBar.currentUser}>

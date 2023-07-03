@@ -22,7 +22,7 @@ export const contactSlice = createSlice({
   },
   reducers: {
     searchContacts: (state, action) => {
-      state.filter = action.payload.user;
+      state.filter = action.payload;
     },
   },
   extraReducers: {

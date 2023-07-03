@@ -6,7 +6,6 @@ const setAuthHeader = token => {
       axios.defaults.headers.common.Authorization = `Bearer ${token}`;
     };
     
-    // Utility to remove JWT
     const clearAuthHeader = () => {
       axios.defaults.headers.common.Authorization = '';
     };
@@ -16,7 +15,6 @@ export const register = createAsyncThunk('task/register', async (credentials, th
       try {
             const {data} = await axios.post(`/users/signup`, credentials)
             setAuthHeader(data.token)
-            console.log(data)
             return data
       }
       catch (error) {
@@ -28,7 +26,6 @@ export const register = createAsyncThunk('task/register', async (credentials, th
       try {
             const {data} = await axios.post(`/users/login`, credentials)
             setAuthHeader(data.token)
-            console.log(data)
             return data
       }
       catch (error) {
