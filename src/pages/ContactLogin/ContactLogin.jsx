@@ -10,14 +10,12 @@ const ContactLogin = () => {
     password: '',
   });
   const handleSubmit = (e) => {
+  const form = e.currentTarget;
   e.preventDefault()
-  if (state.name && state.number) {
+  if (state.email && state.password) {
   dispatch(login({...state}))
-  setState({
-    email: '',
-    password: '',
-  })
   }
+  form.reset();
   }
   const handleChange = e => {
     const { name, value } = e.target;

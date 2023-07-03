@@ -18,12 +18,14 @@ const Register = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    const form = event.currentTarget;
+    event.preventDefault()
+  if (state.name && state.email && state.password) {
     dispatch(register({...state}))
-    setState({
-      name: '',
-      email: '',
-      password: '',
-    })
+   
+  }
+  form.reset();
+  
   };
 
 return (
