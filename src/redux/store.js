@@ -11,7 +11,6 @@ import {
 import storage from 'redux-persist/lib/storage'
 import { contactReducer } from "./contacts/contactSlice.js";
 import { authReducer } from "./master/authSlice.js";
-import { combineReducers } from 'redux'
 
 const persistConfig = {
   key: 'auth',
@@ -21,7 +20,7 @@ const persistConfig = {
 }
 
 const persistedReducer = persistReducer(persistConfig, authReducer)
-const reducer = combineReducers({
+const reducer = ({
   auth: persistedReducer,
   users: contactReducer,
 })
