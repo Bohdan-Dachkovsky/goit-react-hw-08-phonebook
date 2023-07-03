@@ -28,7 +28,7 @@ return (
           <Link to="/register">Signup</Link>
         </li>
         <li className={blockCSS.toggleLink}>
-          <Link to="login">Login</Link>
+          <Link to="/login">Login</Link>
         </li>
       </div>
     )}
