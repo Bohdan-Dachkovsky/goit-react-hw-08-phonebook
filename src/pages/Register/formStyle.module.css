@@ -2,6 +2,7 @@ div > .wrapperForm:nth-child(3n + 1) {
   margin-left: 100px;
 }
 .wrapper label:nth-child(1) {
+  margin-top: 50px;
   margin-left: 0px;
 }
 .wrapperForm > label::after {
@@ -22,6 +23,7 @@ div > .wrapperForm {
   padding: 0px;
   text-align: start;
 }
+
 .field {
   position: relative;
   max-width: 350px;

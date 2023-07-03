@@ -7,6 +7,9 @@ input {
   margin: 0px;
   padding: 0px;
 }
+form {
+  margin-top: 50px;
+}
 .wrapperForm {
   max-width: 450px;
   display: flex;

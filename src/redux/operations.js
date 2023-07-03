@@ -2,18 +2,20 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 axios.defaults.baseURL = 'https://goit-task-manager.herokuapp.com/';
 
-const token = {
-set(token) {
-axios.defaults.headers.common.Authorization = `Bearer ${token}`},
-unset() {
-axios.defaults.headers.common.Authorization = ''},
-
-}
+const setAuthHeader = token => {
+      axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+    };
+    
+    // Utility to remove JWT
+    const clearAuthHeader = () => {
+      axios.defaults.headers.common.Authorization = '';
+    };
+    
 
 export const register = createAsyncThunk('task/register', async (credentials, thunkAPI) => {
       try {
             const {data} = await axios.post(`/users/signup`, credentials)
-            token.set(data.token)
+            setAuthHeader(data.token)
             console.log(data)
             return data
       }
@@ -25,7 +27,7 @@ export const register = createAsyncThunk('task/register', async (credentials, th
       export const login = createAsyncThunk('task/login', async (credentials, thunkAPI) => {
       try {
             const {data} = await axios.post(`/users/login`, credentials)
-            token.set(data.token)
+            setAuthHeader(data.token)
             console.log(data)
             return data
       }
@@ -37,7 +39,7 @@ export const register = createAsyncThunk('task/register', async (credentials, th
 export const logout = createAsyncThunk('task/logout', async (_, thunkAPI) => {
       try {
             const {data} = await axios.post(`/users/logout`)
-            token.unset() 
+            clearAuthHeader()
             return data
       }
       catch (error) {
@@ -51,7 +53,7 @@ export const refreshUser = createAsyncThunk('task/ser', async (_, thunkAPI) => {
       if(historyToken === null) {
       return thunkAPI.rejectWithValue
       }
-      token.set(historyToken)
+      setAuthHeader(historyToken)
 try {
       const {data} = await axios.get('/users/current')
       return data

@@ -24,10 +24,10 @@ export const App = () => {
   return (
     <Suspense>
       <Routes>
-        <Route path = '/' element={<Layout/>} > 
+        <Route exact path = '/' element={<Layout/>} > 
         <Route index element ={<Home/>} />
-        <Route path = 'register' element ={   <RestrictedRoute redirectTo="contacts" component={<Register/>} />} />
-        <Route path= 'login' element = { <RestrictedRoute redirectTo="contacts" component={<ContactLogin/>} /> }/>
+        <Route exact path = 'register' element ={ <RestrictedRoute redirectTo="contacts" component={<Register/>} />} />
+        <Route exact path= 'login' element = { <RestrictedRoute redirectTo="contacts" component={<ContactLogin/>} /> }/>
         <Route path= 'contacts' element = {<PrivateRoute redirectTo="login" component={<Collection/>} />}/>
       </Route>
       </Routes>
