@@ -40,7 +40,7 @@ export const logout = createAsyncThunk('task/logout', async (_, thunkAPI) => {
             return data;
       }
       catch (error) {
-            thunkAPI.rejectWithValue(error.message) 
+            return
       }
       
 });
