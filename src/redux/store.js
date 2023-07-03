@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore} from "@reduxjs/toolkit";
 import {
   persistReducer,
   FLUSH,
@@ -14,15 +14,16 @@ import { authReducer } from "./master/authSlice.js";
 import { combineReducers } from 'redux'
 
 const persistConfig = {
-  key: 'root',
-  version: 1,
+  key: 'auth',
   storage,
+  whitelist: ['token'],
+  blacklist: ['user', 'isLoggedIn', 'isRefreshing']
 }
 
 const persistedReducer = persistReducer(persistConfig, authReducer)
 const reducer = combineReducers({
   auth: persistedReducer,
-  user: contactReducer,
+  users: contactReducer,
 })
 export const store = configureStore({
     reducer,
@@ -33,4 +34,5 @@ export const store = configureStore({
         serializableCheck: false,
       },
     }),
+    devTools: process.env.NODE_ENV === 'development',
 });

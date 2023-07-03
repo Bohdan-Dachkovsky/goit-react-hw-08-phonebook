@@ -1,4 +1,4 @@
-export const getTasks = state => state.user.items;
-export const getLoading = state => state.user.isLoading;
-export const errorMessage = state => state.user.error;
-export const getStatusFilter = state => state.user.filter;
+export const getTasks = state => state.users.items;
+export const getLoading = state => state.users.isLoading;
+export const errorMessage = state => state.users.error;
+export const getStatusFilter = state => state.users.filter;
