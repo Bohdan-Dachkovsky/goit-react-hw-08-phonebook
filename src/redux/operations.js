@@ -87,6 +87,11 @@ export const dltUser = createAsyncThunk(
 export const getAllcontacts = createAsyncThunk(
   "task/getAllcontacts",
   async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const historyToken = state.users.token;
+    if (historyToken === null) {
+      return thunkAPI.rejectWithValue("error");
+    }
     try {
       const { data } = await axios.get(`/contacts`);
 
