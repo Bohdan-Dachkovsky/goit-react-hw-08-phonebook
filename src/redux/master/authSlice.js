@@ -22,41 +22,38 @@ export const testSlice = createSlice({
     [register.pending]: handlePending,
     [register.rejected]: handleRejected,
     [register.fulfilled]: (state, action) => {
-      state.user = action.payload.user;
+      state.user =action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
       state.isRefreshing = true;
       state.error = null;
     },
-
     [login.pending]: handlePending,
     [login.rejected]: handleRejected,
     [login.fulfilled]: (state, action) => {
-      console.log("log full ", action.payload);
-      state.user = action.payload.user;
-      state.token = action.payload.token;
-      state.isLoggedIn = true;
-      state.isRefreshing = true;
+        state.user =action.payload.user;
+        state.token = action.payload.token;
+        state.isLoggedIn = true;
+        state.isRefreshing = true;
     },
-
     [logout.pending]: handlePending,
     [logout.rejected]: handleRejected,
     [logout.fulfilled](state, action) {
-      state.user = { name: null, email: null };
+      state.user ={ name: null, email: null };
       state.token = null;
       state.isLoggedIn = false;
       state.isRefreshing = false;
     },
-
+ 
     [refreshUser.pending]: handlePending,
     [refreshUser.rejected]: handleRejected,
     [refreshUser.fulfilled](state, action) {
-      state.user = action.payload;
-      state.token = action.payload.token;
-      state.isLoggedIn = true;
-      state.isRefreshing = true;
+        state.user = action.payload;
+        state.token = action.payload.token;
+        state.isLoggedIn = true;
+        state.isRefreshing = true;
     },
-  },
+},
 });
 
 export const authReducer = testSlice.reducer;
