@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-axios.defaults.baseURL = "https://connections-api.herokuapp.com/";
+axios.defaults.baseURL = 'https://goit-task-manager.herokuapp.com/';
 
 const setAuthHeader = (token) => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -8,7 +8,7 @@ const setAuthHeader = (token) => {
 
 // Utility to remove JWT
 const clearAuthHeader = () => {
-  axios.defaults.headers.common.Authorization = "";
+  axios.defaults.headers.common.Authorization = '';
 };
 
 export const register = createAsyncThunk(
