@@ -10,12 +10,14 @@ const ContactLogin = () => {
     password: '',
   });
   const handleSubmit = (e) => {
-  const form = e.currentTarget;
   e.preventDefault()
   if (state.email && state.password) {
   dispatch(login({...state}))
   }
-  form.reset();
+  setState({
+    email: '',
+    password: '',
+  });
   }
   const handleChange = e => {
     const { name, value } = e.target;
@@ -30,7 +32,7 @@ return (
         <input
           type="text"
           name="email"
-          defaultValue={state.email}
+          value={state.email}
           onChange={handleChange}
           className={formCss.field}
           autoComplete="off"
@@ -42,7 +44,7 @@ return (
         <input
           type="text"
           name="password"
-          defaultValue={state.password}
+          value={state.password}
           onChange={handleChange}
           className={formCss.field}
           autoComplete="off"

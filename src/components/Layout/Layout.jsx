@@ -17,7 +17,7 @@ const Layout = () => {
             <Link to="/">Home</Link>
           </li>
           <li className={blockCSS.homeStyle}>
-            {!isVerify && <Link to="/contacts">Open Phonebook </Link>}
+             <Link to="/contacts">Open Phonebook </Link>
           </li>
         </Navigation>
         {isVerify ? (
