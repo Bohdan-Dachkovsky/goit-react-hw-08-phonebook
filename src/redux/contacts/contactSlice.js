@@ -12,7 +12,9 @@ const handleRejected = (state, action) => {
 export const contactSlice = createSlice({
   name: "users",
   initialState: {
-    items: [],
+    items: [   { id: 1, name: 'Rasel Dosh', number: '093-8383-355' },
+    { id: 2, name: 'Jonsion Resta', number: '093-8459-689' },
+    { id: 3, name: 'Boris Bankli', number: '095-4543-344' },],
     isLoading: false,
     error: null,
     filter: "",
