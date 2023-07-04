@@ -94,7 +94,6 @@ export const getAllcontacts = createAsyncThunk(
     }
     try {
       const { data } = await axios.get(`/contacts`);
-
       return data;
     } catch (error) {
       thunkAPI.rejectWithValue(error.message);

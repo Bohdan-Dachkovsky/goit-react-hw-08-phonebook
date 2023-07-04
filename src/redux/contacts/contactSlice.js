@@ -13,9 +13,9 @@ export const contactSlice = createSlice({
   name: "users",
   initialState: {
     items: [   
-    {name: 'Rasel Dosh', number: '093-8383-355' },
-    {name: 'Jonsion Resta', number: '093-8459-689' },
-    { name: 'Boris Bankli', number: '095-4543-344' },],
+    {name: 'Rasel Dosh', number: '093-8383-355'},
+    {name: 'Jonsion Resta', number: '093-8459-689'},
+    {name: 'Boris Bankli', number: '095-4543-344'},],
     isLoading: false,
     error: null,
     filter: "",
