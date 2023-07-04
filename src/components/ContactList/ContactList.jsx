@@ -35,10 +35,10 @@ export default function ContactList() {
   const error = useSelector(errorMessage);
   const filtered = useSelector(getStatusFilter);
   const contactsName = filtered
-    ? [...contacts].filter((contact) =>
+    ? ([...contacts].filter((contact) =>
         contact.name.toLowerCase().includes(filtered.toLowerCase())
-      )
-    : contacts;
+      ))
+    : (contacts);
   return (
     <TaskList>
       {error || <p>Add contact please!</p>}
