@@ -9,6 +9,7 @@ const Register = () => {
     email: "",
     password: "",
   });
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,8 +17,6 @@ const Register = () => {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-
     event.preventDefault();
     if (state.name && state.email && state.password) {
       dispatch(register({ ...state }));
