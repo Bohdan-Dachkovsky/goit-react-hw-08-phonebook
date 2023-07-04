@@ -35,7 +35,7 @@ const Layout = () => {
       </Header>
 
       <main className={blockCSS.container}>
-      <Suspense>
+      <Suspense fallback={null}>
       <Outlet />
       </Suspense>
       </main>
