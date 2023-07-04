@@ -6,7 +6,6 @@ import {
   getTasks,
   getStatusFilter,
   errorMessage,
-  getLoading,
 } from "../../redux/contacts/selectors.js";
 const TaskList = styled.ul`
   display: block;
@@ -31,7 +30,7 @@ const Button = styled.button`
 export default function ContactList() {
   const dispatch = useDispatch();
   const contacts = useSelector(getTasks);
-  const isLoading = useSelector(getLoading);
+    // const isLoading = useSelector(getLoading);
   const error = useSelector(errorMessage);
   const filtered = useSelector(getStatusFilter);
  
@@ -48,7 +47,7 @@ export default function ContactList() {
         <h2>Contacts</h2>
         {!contacts ? <p>No data contacts!</p> : undefined}
       </li>
-      {Array.isArray(contactsName) || isLoading ? (
+      {Array.isArray(contactsName)  ? (
        [...contactsName].map((contact, idx, arr) => (
           <List key={idx}>
             {contact.name + ":" + contact.number}
