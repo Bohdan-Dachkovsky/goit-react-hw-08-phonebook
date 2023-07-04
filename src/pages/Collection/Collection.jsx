@@ -1,7 +1,6 @@
 import {
   getTasks,
-  getLoading,
-  errorMessage,
+  errorMessage
 } from "../../redux/contacts/selectors.js";
 import { useEffect } from "react";
 import { getAllcontacts } from "../../redux/operations.js";
@@ -14,18 +13,19 @@ import bookStyle from "./index.module.css";
 const Collection = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(getTasks);
-  const isLoading = useSelector(getLoading);
-  const error = useSelector(errorMessage);
+  const inform = useSelector(errorMessage)
+  // const isLoading = useSelector(getLoading);
+
 
   useEffect(() => {
     dispatch(getAllcontacts());
   }, [dispatch]);
   return (
     <div className={bookStyle.container}>
-      {Array.isArray(contacts) > 0 && <h1>Phonebook</h1> && <ContactForm />}
-      {Array.isArray(contacts) > 0 && <Filter />}
-      {isLoading && !error && <b>Request in progress...</b>}
-      {!error && <ContactList />}
+      <ContactForm />
+     {!contacts && <Filter />}
+      {inform && <b>Request in progress...</b>}
+       <ContactList />
     </div>
   );
 };

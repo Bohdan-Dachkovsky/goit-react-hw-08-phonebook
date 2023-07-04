@@ -21,8 +21,7 @@ const Form = styled.form`
   padding: 12px 12px 24px;
   width: 600px;
   border-radius: 2px;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
   margin-bottom: 16px;
 `;
 const Input = styled.input`
@@ -39,7 +38,11 @@ const StyledLabel = styled(Label)`
   position: relative;
 `;
 const SubmButton = styled.button`
+  display: flex;
+  justify-content: center;
   background-color: #3f51b5;
+  margin-top: 65px;
+  margin-right: 150px;
   border: 0;
   outline: 0;
   border-radius: 4px;
@@ -51,8 +54,8 @@ const SubmButton = styled.button`
   display: block;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 220px;
-  height: 130px;
+  width: 100px;
+  height: 50px;
   text-align: center;
   align-self: end;
   position: absolute;

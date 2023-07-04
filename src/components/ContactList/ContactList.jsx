@@ -10,6 +10,7 @@ import {
 const TaskList = styled.ul`
   display: block;
   width: 600px;
+  text-align: start;
   list-style: none;
   list-style-type: none;
 `;

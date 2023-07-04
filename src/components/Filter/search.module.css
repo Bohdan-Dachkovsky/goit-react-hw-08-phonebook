@@ -1,18 +1,17 @@
 .block {
-    display: flex;
-    flex-direction: column;  
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    width: 50%;   
-    margin-left: 50px;
-    
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 50%;
+  margin-left: 50px;
 }
 .textEl {
-margin: 0px;
-display: flex;
-justify-content: flex-start;
-align-items: flex-start;
-max-width: 380px;
-max-height: 60px;
-
+  margin: 0px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 380px;
+  max-height: 60px;
 }
