@@ -47,7 +47,7 @@ export const logout = createAsyncThunk("task/logout", async (_, thunkAPI) => {
     thunkAPI.rejectWithValue(error.message);
   }
 });
-export const refreshUser = createAsyncThunk("task/ser", async (_, thunkAPI) => {
+export const refreshUser = createAsyncThunk("task/refreshUser", async (_, thunkAPI) => {
   const state = thunkAPI.getState();
   const historyToken = state.auth.token;
   if (historyToken === null) {
@@ -74,7 +74,7 @@ export const addUser = createAsyncThunk(
   }
 );
 export const dltUser = createAsyncThunk(
-  "task/dltContact",
+  "task/dltUser",
   async (contactId, thunkAPI) => {
     try {
       const { data } = await axios.delete(`/contacts/${contactId}`);
