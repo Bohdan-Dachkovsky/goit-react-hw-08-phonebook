@@ -34,11 +34,8 @@ export default function ContactList() {
   const isLoading = useSelector(getLoading);
   const error = useSelector(errorMessage);
   const filtered = useSelector(getStatusFilter);
-  const contactsName = filtered
-    ? ([...contacts].filter((contact) =>
-        contact.name.toLowerCase().includes(filtered.toLowerCase())
-      ))
-    : (contacts);
+  const contactsName = [...contacts].filter((contact) =>
+        contact.name.toLowerCase().includes(filtered.toLowerCase()));
   return (
     <TaskList>
       {error || <p>Add contact please!</p>}
@@ -47,7 +44,7 @@ export default function ContactList() {
         {!contacts ? <p>No data contacts!</p> : undefined}
       </li>
       {Array.isArray(contactsName) || isLoading ? (
-        [...contactsName].map((contact, idx, arr) => (
+       !filtered ? [...contactsName].map((contact, idx, arr) => (
           <List key={idx}>
             {contact.name + ":" + contact.number}
             <Button
@@ -58,7 +55,7 @@ export default function ContactList() {
               Delete
             </Button>
           </List>
-        ))
+        )) : contacts
       ) : (
         <p>Not available contacts!</p>
       )}
