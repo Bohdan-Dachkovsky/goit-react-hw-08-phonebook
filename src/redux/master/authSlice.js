@@ -22,10 +22,9 @@ export const testSlice = createSlice({
     [register.pending]: handlePending,
     [register.rejected]: handleRejected,
     [register.fulfilled]: (state, action) => {
-      state.user =action.payload.user;
+      state.user = action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
-      state.isRefreshing = true;
     },
     [login.pending]: handlePending,
     [login.rejected]: handleRejected,
@@ -33,7 +32,6 @@ export const testSlice = createSlice({
         state.user =action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
-        state.isRefreshing = true;
     },
     [logout.pending]: handlePending,
     [logout.rejected]: handleRejected,
@@ -41,7 +39,7 @@ export const testSlice = createSlice({
       state.user ={ name: null, email: null };
       state.token = null;
       state.isLoggedIn = false;
-      state.isRefreshing = false;
+
     },
  
     [refreshUser.pending]: handlePending,
