@@ -34,9 +34,13 @@ export default function ContactList() {
   const isLoading = useSelector(getLoading);
   const error = useSelector(errorMessage);
   const filtered = useSelector(getStatusFilter);
-  const variable = contacts || ''
-  const contactsName = variable.filter((contact) =>
-        contact.name.toLowerCase().includes(filtered.toLowerCase()));
+ 
+  const contactsName = Array.isArray(contacts) ? [...contacts].filter((contact) => {
+  if (!contact.name) {
+    return [];
+  }
+       return contact.name.toLowerCase().includes(filtered.toLowerCase());
+            }) : contacts;
   return (
     <TaskList>
       {error || <p>Add contact please!</p>}
