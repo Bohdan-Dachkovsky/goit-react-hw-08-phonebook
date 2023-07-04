@@ -3,7 +3,7 @@ import { Container, Header, Navigation, Link } from "../index.js";
 import { useSelector } from "react-redux";
 import blockCSS from "./style.module.css";
 import { isLoggedin } from "../../redux/master/selectors.js";
-
+import { Suspense } from "react";
 import UserMenu from "../UserMenu/UserMenu.jsx";
 
 const Layout = () => {
@@ -35,7 +35,9 @@ const Layout = () => {
       </Header>
 
       <main className={blockCSS.container}>
-        <Outlet />
+      <Suspense>
+      <Outlet />
+      </Suspense>
       </main>
     </Container>
   );

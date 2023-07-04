@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Suspense } from "react";
 import { useEffect } from "react";
 import { PrivateRoute } from "./components/PrivateRoute.js";
 import { RestrictedRoute } from "./components/RestrictedRoute.js";
@@ -20,12 +19,11 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <Suspense>
+
       <Routes>
-        <Route exact path="/" element={<Layout />}>
+        <Route  path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route
-            exact
             path="/register"
             element={
               <RestrictedRoute
@@ -35,7 +33,6 @@ export const App = () => {
             }
           />
           <Route
-            exact
             path="/login"
             element={
               <RestrictedRoute
@@ -52,6 +49,6 @@ export const App = () => {
           />
         </Route>
       </Routes>
-    </Suspense>
+
   );
 };
